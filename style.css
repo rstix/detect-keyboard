@@ -1,0 +1,22 @@
+body{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #3D3C3F;
+  height: 100vh;
+  font-family: monospace;
+}
+
+.word{
+  color: #A8B189;
+  font-size: 22px;
+}
+
+.repeat-word{
+  margin-top: 15px;
+  color: #E4CBA5;
+  font-size: 28px;
+}
