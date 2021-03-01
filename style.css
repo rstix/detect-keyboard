@@ -15,6 +15,25 @@ body{
   font-size: 22px;
 }
 
+video{
+  width: 90vw;
+  max-width: 1024px;
+}
+
+.subtitles{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 15px;
+  color: #E4CBA5;
+  font-size: 28px;
+}
+
+p{
+  margin: 5px;
+}
+
 .repeat-word{
   margin-top: 15px;
   color: #E4CBA5;
