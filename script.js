@@ -108,7 +108,7 @@ document.addEventListener('keyup', (e) => {
     guessed.push(selectedWord[guessed.length])
     setRepeatWord(`${guessed.join('')}${dot.repeat(selectedWord.length-guessed.length)}`)
   }
-  if (guessed.join('') == selectedWord && video.currentTime > subtitles[0].endTime - timeOffset + 1.2) {
+  if (guessed.join('') == selectedWord && video.currentTime > subtitles[0].endTime - timeOffset + 1.1) {
     video.currentTime = subtitles[0].startTime-timeOffset+1.5
     video.play()
   }
@@ -116,21 +116,21 @@ document.addEventListener('keyup', (e) => {
 
 
 video.addEventListener('timeupdate', () => {
+
+  if (video.currentTime > subtitles[0].endTime - timeOffset + 1.1 && selectedWord != guessed.join('')) {
+    video.pause()
+  }
   
   if (subtitles[0].endTime - timeOffset + 1.5 < video.currentTime) {
     subtitles.splice(0, 1)
     guessed = []
     selectedWord = ''
+    
   }
 
-  selectedWord = subtitles[0].missingWord1
-  firstLine.innerHTML = subtitles[0].subsLine1.replace(subtitles[0].missingWord1,`<span class='missing-word1'>${selectedWord.substring(0,guessed.length)}${dot.repeat(selectedWord.length-guessed.length)}</span>`)
-  secondLine.innerHTML = subtitles[0].subsLine2
-
-
-  if (video.currentTime > subtitles[0].endTime - timeOffset + 1.2 && selectedWord != guessed.join('')) {
-    video.pause()
-  }
+    selectedWord = subtitles[0].missingWord1
+    firstLine.innerHTML = subtitles[0].subsLine1.replace(subtitles[0].missingWord1,`<span class='missing-word1'>${selectedWord.substring(0,guessed.length)}${dot.repeat(selectedWord.length-guessed.length)}</span>`)
+    secondLine.innerHTML = subtitles[0].subsLine2
     
 })
 
