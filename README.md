@@ -1,5 +1,5 @@
 # Lyrics trainings
-###TODO
+### TODO
 - [ ] apostrofy (ucasne nezobrazuje ciarky a bodky)
 - [ ] pridat obtiaznost
 - [ ] Pripravit dobre video
