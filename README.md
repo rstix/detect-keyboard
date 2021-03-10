@@ -1,1 +1,1 @@
-# Lyrics training
+Lyrics trainings
